@@ -1,0 +1,14 @@
+// storage.rules
+// ─────────────────────────────────────────────────────────────────────────────
+// Screenshots stored at screenshots/{userId}/{tradeId}.ext
+// Only the owner can read and write their screenshots.
+// Deploy with:  firebase deploy --only storage
+// ─────────────────────────────────────────────────────────────────────────────
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /screenshots/{userId}/{allPaths=**} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}

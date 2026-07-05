@@ -1,0 +1,69 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Sora:wght@300;400;500;600&display=swap');
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  background: #0a0a0f;
+  color: #e8e8f0;
+  font-family: 'Sora', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar            { width: 4px; height: 4px; }
+::-webkit-scrollbar-track      { background: transparent; }
+::-webkit-scrollbar-thumb      { background: rgba(255,255,255,.12); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover{ background: rgba(255,255,255,.2); }
+
+/* ── Form input base ──────────────────────────────────────────────────────── */
+.form-input {
+  @apply w-full rounded-lg border border-white/[0.09] bg-[#16161f] px-3 py-2
+         font-mono text-[12px] text-white/80 placeholder-white/20
+         outline-none transition-colors
+         hover:border-white/[0.14] focus:border-[#7c6af7]/70;
+}
+
+select.form-input option {
+  background: #16161f;
+  color: #e8e8f0;
+}
+
+textarea.form-input { resize: vertical; }
+
+/* ── Animations ───────────────────────────────────────────────────────────── */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in  { animation: fade-in  0.2s ease forwards; }
+.animate-slide-up { animation: slide-up 0.25s ease forwards; }
+
+/* ── Gradient text utility ────────────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #a78bfa, #00d68f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Line clamp ───────────────────────────────────────────────────────────── */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
