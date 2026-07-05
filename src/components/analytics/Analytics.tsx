@@ -6,7 +6,7 @@ import {
 import { useStore } from "@/store";
 import { useTrades } from "@/hooks/useTrades";
 import { computeStats, buildDailyStats, fmtPnl } from "@/utils/calculations";
-import { format, startOfMonth, endOfMonth, eachDayOfInterval } from "date-fns";
+import { format } from "date-fns";
 
 const COLORS = { win: "#00d68f", loss: "#ff4d6a", accent: "#7c6af7" };
 

@@ -96,7 +96,7 @@ export function Sidebar() {
           {/* Account quick-switch */}
           {accounts.length > 1 && (
             <div className="mt-2 flex gap-1">
-              {accounts.map((a, i) => (
+              {accounts.map((a) => (
                 <button
                   key={a.id}
                   onClick={() => setActiveAccountId(a.id)}

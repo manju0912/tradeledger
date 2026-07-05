@@ -7,7 +7,6 @@ import { auth } from "@/lib/firebase";
 import { useStore } from "@/store";
 import { AppShell } from "@/components/layout/AppShell";
 import { LoginPage } from "@/components/auth/LoginPage";
-import type { User } from "@/types";
 
 const queryClient = new QueryClient({
   defaultOptions: {

@@ -5,7 +5,7 @@ import {
   Tooltip, ResponsiveContainer,
 } from "recharts";
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, getDay } from "date-fns";
-import { TrendingUp, TrendingDown, Activity, Target, Award, Calendar } from "lucide-react";
+import { TrendingUp, TrendingDown, Activity, Target } from "lucide-react";
 import { useStore } from "@/store";
 import { useAccounts, useTrades } from "@/hooks/useTrades";
 import { computeStats, buildDailyStats, fmtPnl } from "@/utils/calculations";
@@ -38,7 +38,6 @@ export default function Dashboard() {
     ? Math.abs((stats.totalPnl / activeAccount.accountSize) * 100)
     : 0;
   const ddLimit = activeAccount?.maxDrawdown ?? 10;
-  const ddSafe = ddUsed < ddLimit * 0.6;
   const ddWarning = ddUsed >= ddLimit * 0.6 && ddUsed < ddLimit * 0.9;
   const ddDanger = ddUsed >= ddLimit * 0.9;
 

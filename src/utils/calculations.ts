@@ -3,7 +3,7 @@
 // Pure calculation functions — no side effects, easy to unit-test.
 // ─────────────────────────────────────────────────────────────────────────────
 import type { Trade, DailyStats, AccountStats, TradeType } from "@/types";
-import { format, parseISO, eachDayOfInterval, startOfMonth, endOfMonth } from "date-fns";
+import { format, eachDayOfInterval, startOfMonth, endOfMonth } from "date-fns";
 
 /**
  * Auto-calculate Risk:Reward Ratio from entry/SL/TP prices.
